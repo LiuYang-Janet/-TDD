@@ -5,7 +5,8 @@ Created on Tue Mar 29 08:37:13 2022
 @author: LY
 """
 
-from tkinter.tix import InputOnly
+import http
+import os
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
@@ -18,9 +19,12 @@ MAX_WAIT = 10
 class NewVisitorTest(StaticLiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Firefox()
+        staging_server=os.environ.get('STAGING_SERVER')
+        if staging_server:
+            self.live_server_url='https://'+staging_server
 
     def tearDown(self):
-        self.browser.refresh()
+        self.browser.refresh
         self.browser.quit()
 
     def wait_for_row_in_list_table(self, row_text):
