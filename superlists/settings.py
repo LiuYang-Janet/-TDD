@@ -24,9 +24,11 @@ CSRF_TRUSTED_ORGINS=['http://47.110.147.80']
 SECRET_KEY = 'django-insecure-_1%9ud!=f6j&h^vx7stxtrj*9^bt3wubp4=7(%-r7w&p(pl3y='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+TEMPLATE_DEBUG=DEBUG
+
+ALLOWED_HOSTS = ['40.110.147.80']
 
 # Application definition
 

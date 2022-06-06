@@ -1,1 +1,2 @@
-diango==2.1.7
+diango==3.2.12
+gunicorn==20.1.0
