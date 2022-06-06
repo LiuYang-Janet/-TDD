@@ -1,0 +1,11 @@
+[Unit]
+Description=Gunicorn server for 47.110.147.80
+
+[Service]
+Restart=on-failure
+User=liuyang
+WorkingDirectory=/home/liuyang/sites/47.110.147.80/source
+ExecStart=/home/liuyang/sites/47.110.147.80/virtualenv/bin/gunicorn --bind unix:/tmp/47.110.147.80.socket superlists.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
